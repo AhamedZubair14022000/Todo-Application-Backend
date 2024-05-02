@@ -11,7 +11,7 @@ var isMatch = require("date-fns/isMatch");
 var isValid = require("date-fns/isValid");
 app.use(cors());
 app.use(express.json());
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3000;
 
 const dbPath = path.join(__dirname, "UsersTask.db");
 

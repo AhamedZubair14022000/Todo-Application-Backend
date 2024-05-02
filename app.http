@@ -1,0 +1,78 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "designer_guru",
+  "name": "Alex Johnson",
+  "password": "SecurePass!",
+  "gender": "Male",
+  "contact_number": 442012345678
+}
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "zubair",
+  "password": "zubair@123"
+}
+###
+PUT  http://localhost:3000/change-password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI
+Content-Type: application/json
+
+{
+  "username": "zubair",
+  "oldPassword": "zubair_14",
+  "newPassword": "zubair@123"
+}
+
+
+###
+POST http://localhost:3000/tasks/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI
+Content-Type: application/json
+
+{
+"taskId": 3,
+"todo": "Learn Node JS",
+"priority": "LOW",
+"status": "TO DO",
+"category": "HOME",
+"dueDate": "2021-03-20",
+"assigneeId": 103
+}
+###
+
+GET http://localhost:3000/todos/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI
+
+###
+GET http://localhost:3000/todos/?category=HOME
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI
+
+###
+GET http://localhost:3000/todo/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI
+
+###
+GET http://localhost:3000/agenda/?date=2021-12-18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI
+
+###
+PUT http://localhost:3000/todos/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI
+Content-Type: application/json
+
+{
+ "todo": "Conduct a webinar",
+ "priority": "MEDIUM",
+ "status": "DONE",
+ "category": "HOME",
+ "dueDate": "2021-12-28",
+ "assigneeId": 101
+}
+
+###
+DELETE http://localhost:3000/todos/4/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inp1YmFpciIsImlhdCI6MTcxNDU1Nzg1NX0.5SPJUISiiK3kiuvuORWUWQ5hDSPislGLCughc-SF0gI

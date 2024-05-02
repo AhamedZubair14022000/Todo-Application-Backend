@@ -6,14 +6,12 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const app = express();
-
 var format = require("date-fns/format");
-
 var isMatch = require("date-fns/isMatch");
-
 var isValid = require("date-fns/isValid");
 app.use(cors());
 app.use(express.json());
+const PORT = process.env.PORT || 3030;
 
 const dbPath = path.join(__dirname, "UsersTask.db");
 
@@ -25,8 +23,8 @@ const initializeDbAndServer = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    app.listen(3000, () => {
-      console.log("Server Running at http://localhost:3000/");
+    app.listen(PORT, () => {
+      console.log(`server started on port ${PORT}`);
     });
   } catch (error) {
     console.log(`DB Error : ${error.message}`);
